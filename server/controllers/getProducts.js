@@ -1,4 +1,4 @@
-import Product from "../models/Product";
+import Product from "../models/Product.js";
 
 export default async function getProducts(req, res) {
 	//Podria filtrar los productos aca pero en el pdf el
