@@ -9,6 +9,6 @@ const router = Router();
 router.get("/", getProducts);
 router.post("/add", createProduct);
 router.put("/update", editProduct);
-router.delete("/delete", deleteProduct);
+router.delete("/delete/:id", deleteProduct);
 
 export default router;
