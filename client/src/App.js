@@ -21,7 +21,7 @@ function App() {
 	return (
 		<div className="container">
 			<SearchForm />
-			<Gallery />
+			<Gallery products={products} />
 		</div>
 	);
 }
