@@ -7,7 +7,9 @@ function App() {
 	const [products, setProducts] = useState([]);
 
 	useEffect(() => {
-		fetch(`${API_URL}/`)
+		fetch(`${API_URL}/`, {
+			credentials: "include"
+		})
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
@@ -15,6 +17,7 @@ function App() {
 			})
 			.catch((err) => console.log(err));
 	}, []);
+
 	return (
 		<div className="container">
 			<SearchForm />
