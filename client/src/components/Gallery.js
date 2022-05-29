@@ -1,21 +1,16 @@
 import Card from "./Card";
 
-export default function Gallery({products}) {
+export default function Gallery({products, setShowDetails}) {
 	return (
-		<div className="d-flex flex-wrap justify-content-center mt-5 mb-5">
-			{/* <Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card /> */}
-			{products && products.length > 0
-				? products.map((product) => <Card product={product} />)
-				: null}
+		<div className="mt-5">
+			<h1 className="text-center">Products</h1>
+			<div className="d-flex flex-wrap justify-content-center mt-4 mb-5">
+				{products && products.length > 0
+					? products.map((product) => (
+							<Card product={product} setShowDetails={setShowDetails} />
+					  ))
+					: null}
+			</div>
 		</div>
 	);
 }

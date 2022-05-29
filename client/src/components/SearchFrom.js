@@ -1,6 +1,6 @@
 export default function SearchForm() {
 	return (
-		<form className="mt-4 col-6 mx-auto">
+		<form className="mt-4 col-lg-6 px-2 mx-auto">
 			<h2>Search Product</h2>
 			<div>
 				<label htmlFor="productName" className="form-label">
