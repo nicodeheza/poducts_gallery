@@ -3,10 +3,12 @@ import {useState, useEffect} from "react";
 import {API_URL} from "./constants/constants";
 import Details from "./components/Details";
 import Accordion from "./components/Accordion";
+import Edit from "./components/Edit";
 
 function App() {
 	const [products, setProducts] = useState([]);
 	const [showDetails, setShowDetails] = useState({});
+	const [editProduct, setEditProduct] = useState({});
 
 	useEffect(() => {
 		fetch(`${API_URL}/`, {
@@ -23,9 +25,16 @@ function App() {
 	return (
 		<div className="container">
 			<Accordion />
-			<Gallery products={products} setShowDetails={setShowDetails} />
+			<Gallery
+				products={products}
+				setShowDetails={setShowDetails}
+				setEditProduct={setEditProduct}
+			/>
 			{showDetails.name ? (
 				<Details product={showDetails} setShowDetails={setShowDetails} />
+			) : null}
+			{!showDetails.name && editProduct.name !== undefined ? (
+				<Edit setEditProduct={setEditProduct} editProduct={editProduct} />
 			) : null}
 		</div>
 	);

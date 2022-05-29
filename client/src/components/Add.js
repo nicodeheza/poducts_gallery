@@ -1,3 +1,5 @@
+import Options from "./Options";
+
 export default function Add() {
 	return (
 		<form>
@@ -23,10 +25,7 @@ export default function Add() {
 				Category:
 			</label>
 			<select className="form-select" aria-label="Category" id="addCategory">
-				<option defaultValue>Any</option>
-				<option value="1">One</option>
-				<option value="2">Two</option>
-				<option value="3">Three</option>
+				<Options />
 			</select>
 			<label htmlFor="addDescription" className="from-lable">
 				Description:

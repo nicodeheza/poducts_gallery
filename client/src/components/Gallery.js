@@ -1,6 +1,6 @@
 import Card from "./Card";
 
-export default function Gallery({products, setShowDetails}) {
+export default function Gallery({products, setShowDetails, setEditProduct}) {
 	return (
 		<div className="mt-5">
 			<h1 className="text-center">Products</h1>
@@ -8,7 +8,11 @@ export default function Gallery({products, setShowDetails}) {
 				{products && products.length > 0
 					? products.map((product, i) => (
 							<div key={i}>
-								<Card product={product} setShowDetails={setShowDetails} />
+								<Card
+									product={product}
+									setShowDetails={setShowDetails}
+									setEditProduct={setEditProduct}
+								/>
 							</div>
 					  ))
 					: null}

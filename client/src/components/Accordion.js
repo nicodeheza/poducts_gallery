@@ -23,7 +23,7 @@ export default function Accordion() {
 					aria-labelledby="headingOne"
 					data-bs-parent="#accordion"
 				>
-					<div class="accordion-body">
+					<div className="accordion-body">
 						<SearchForm />
 					</div>
 				</div>

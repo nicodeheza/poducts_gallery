@@ -1,4 +1,4 @@
-export default function Card({product, setShowDetails}) {
+export default function Card({product, setShowDetails, setEditProduct}) {
 	return (
 		<div className="card my-3 mx-3" style={{width: "250px"}}>
 			<img
@@ -21,7 +21,12 @@ export default function Card({product, setShowDetails}) {
 					>
 						Details
 					</button>
-					<button className="btn btn-secondary my-2">Edit</button>
+					<button
+						className="btn btn-secondary my-2"
+						onClick={() => setEditProduct(product)}
+					>
+						Edit
+					</button>
 					<button className="btn btn-danger my-2">Delete</button>
 				</div>
 				<p className="card-text fw-lighter" style={{fontSize: "13px"}}>
