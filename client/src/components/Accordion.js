@@ -1,7 +1,7 @@
 import Add from "./Add";
 import SearchForm from "./SearchFrom";
 
-export default function Accordion() {
+export default function Accordion({setProducts}) {
 	return (
 		<div className="accordion mt-5" id="accordion">
 			<div className="accordion-item">
@@ -48,7 +48,7 @@ export default function Accordion() {
 					data-bs-parent="#accordion"
 				>
 					<div className="accordion-body">
-						<Add />
+						<Add setProducts={setProducts} />
 					</div>
 				</div>
 			</div>

@@ -24,7 +24,7 @@ function App() {
 
 	return (
 		<div className="container">
-			<Accordion />
+			<Accordion setProducts={setProducts} />
 			<Gallery
 				products={products}
 				setShowDetails={setShowDetails}
