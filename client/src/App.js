@@ -3,6 +3,7 @@ import SearchForm from "./components/SearchFrom";
 import {useState, useEffect} from "react";
 import {API_URL} from "./constants/constants";
 import Details from "./components/Details";
+import Add from "./components/Add";
 
 function App() {
 	const [products, setProducts] = useState([]);
@@ -24,9 +25,7 @@ function App() {
 		<div className="container">
 			<SearchForm />
 			<div>
-				<button className="btn btn-primary mt-5" style={{width: "100%"}}>
-					Add Product
-				</button>
+				<Add />
 			</div>
 			<Gallery products={products} setShowDetails={setShowDetails} />
 			{showDetails.name ? (
