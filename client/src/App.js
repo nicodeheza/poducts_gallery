@@ -24,7 +24,6 @@ function App() {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data);
 				setProducts(data);
 			})
 			.catch((err) => console.log(err));

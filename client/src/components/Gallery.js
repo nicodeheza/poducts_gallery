@@ -1,4 +1,5 @@
 import Card from "./Card";
+import LoadingCard from "./LoadingCard";
 
 export default function Gallery({
 	products,
@@ -30,19 +31,28 @@ export default function Gallery({
 		<div className="mt-5">
 			<h1 className="text-center">Products</h1>
 			<div className="d-flex flex-wrap justify-content-center mt-4 mb-5">
-				{products && products.length > 0
-					? products.filter(search).map((product, i) => (
-							<div key={i}>
-								<Card
-									product={product}
-									setShowDetails={setShowDetails}
-									setEditProduct={setEditProduct}
-									productIndex={i}
-									setDeleteIndex={setDeleteIndex}
-								/>
-							</div>
-					  ))
-					: null}
+				{products && products.length > 0 ? (
+					products.filter(search).map((product, i) => (
+						<div key={i}>
+							<Card
+								product={product}
+								setShowDetails={setShowDetails}
+								setEditProduct={setEditProduct}
+								productIndex={i}
+								setDeleteIndex={setDeleteIndex}
+							/>
+						</div>
+					))
+				) : (
+					<>
+						<LoadingCard />
+						<LoadingCard />
+						<LoadingCard />
+						<LoadingCard />
+						<LoadingCard />
+						<LoadingCard />
+					</>
+				)}
 			</div>
 		</div>
 	);
