@@ -88,9 +88,7 @@ export default function Add({setProducts}) {
 					min={1}
 					className="form-control"
 					value={productToAdd.price}
-					onChange={(e) =>
-						setProductToAdd({...productToAdd, price: parseFloat(e.target.value)})
-					}
+					onChange={(e) => setProductToAdd({...productToAdd, price: e.target.value})}
 				/>
 			</div>
 			<label htmlFor="addCategory" className="form-label">

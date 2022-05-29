@@ -10,7 +10,7 @@ export default function Gallery({
 	function search(ele) {
 		let add = true;
 		if (searchParams.name) {
-			const regEx = new RegExp(searchParams.name);
+			const regEx = new RegExp(searchParams.name, "i");
 			if (!regEx.test(ele.name)) add = false;
 		}
 

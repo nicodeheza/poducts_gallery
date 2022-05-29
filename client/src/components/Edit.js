@@ -89,9 +89,7 @@ export default function Edit({setEditProduct, editProduct, setProducts}) {
 								min={1}
 								className="form-control"
 								value={editProduct.price}
-								onChange={(e) =>
-									setEditProduct({...editProduct, price: parseFloat(e.target.value)})
-								}
+								onChange={(e) => setEditProduct({...editProduct, price: e.target.value})}
 							/>
 						</div>
 						<label htmlFor="addCategory" className="form-label">
@@ -128,7 +126,10 @@ export default function Edit({setEditProduct, editProduct, setProducts}) {
 							</button>
 							<button
 								className="btn btn-secondary mt-3 ms-3"
-								onClick={() => setEditProduct({})}
+								onClick={(e) => {
+									e.preventDefault();
+									setEditProduct({});
+								}}
 							>
 								Cancel
 							</button>
