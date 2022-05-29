@@ -1,7 +1,6 @@
 export default function SearchForm() {
 	return (
 		<form className="mt-4 col-lg-6 px-2 mx-auto">
-			<h2>Search Product</h2>
 			<div>
 				<label htmlFor="productName" className="form-label">
 					Name:
@@ -29,7 +28,7 @@ export default function SearchForm() {
 						<input
 							type="number"
 							id="min-price"
-							value={100}
+							value={1}
 							min={1}
 							className="form-control"
 						/>
@@ -44,7 +43,7 @@ export default function SearchForm() {
 						<input
 							type="number"
 							id="max-price"
-							value={200}
+							value={99999}
 							min={1}
 							className="form-control"
 						/>

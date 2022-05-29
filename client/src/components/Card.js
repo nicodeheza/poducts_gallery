@@ -25,7 +25,7 @@ export default function Card({product, setShowDetails}) {
 					<button className="btn btn-danger my-2">Delete</button>
 				</div>
 				<p className="card-text fw-lighter" style={{fontSize: "13px"}}>
-					id: {product._id}$
+					id: {product._id}
 				</p>
 			</div>
 		</div>

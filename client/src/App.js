@@ -1,9 +1,8 @@
 import Gallery from "./components/Gallery";
-import SearchForm from "./components/SearchFrom";
 import {useState, useEffect} from "react";
 import {API_URL} from "./constants/constants";
 import Details from "./components/Details";
-import Add from "./components/Add";
+import Accordion from "./components/Accordion";
 
 function App() {
 	const [products, setProducts] = useState([]);
@@ -23,10 +22,7 @@ function App() {
 
 	return (
 		<div className="container">
-			<SearchForm />
-			<div>
-				<Add />
-			</div>
+			<Accordion />
 			<Gallery products={products} setShowDetails={setShowDetails} />
 			{showDetails.name ? (
 				<Details product={showDetails} setShowDetails={setShowDetails} />
