@@ -31,10 +31,18 @@ function App() {
 				setEditProduct={setEditProduct}
 			/>
 			{showDetails.name ? (
-				<Details product={showDetails} setShowDetails={setShowDetails} />
+				<Details
+					product={showDetails}
+					setShowDetails={setShowDetails}
+					setEditProduct={setEditProduct}
+				/>
 			) : null}
 			{!showDetails.name && editProduct.name !== undefined ? (
-				<Edit setEditProduct={setEditProduct} editProduct={editProduct} />
+				<Edit
+					setEditProduct={setEditProduct}
+					editProduct={editProduct}
+					setProducts={setProducts}
+				/>
 			) : null}
 		</div>
 	);

@@ -12,6 +12,7 @@ export default function Gallery({products, setShowDetails, setEditProduct}) {
 									product={product}
 									setShowDetails={setShowDetails}
 									setEditProduct={setEditProduct}
+									productIndex={i}
 								/>
 							</div>
 					  ))

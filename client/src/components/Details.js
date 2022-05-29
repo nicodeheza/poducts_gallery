@@ -1,4 +1,4 @@
-export default function Details({product, setShowDetails}) {
+export default function Details({product, setShowDetails, setEditProduct}) {
 	return (
 		<div
 			className="d-flex justify-content-center align-items-center fixed-top"
@@ -23,10 +23,23 @@ export default function Details({product, setShowDetails}) {
 					<p className="card-text">{product.description}</p>
 					<p className="card-text fw-bold">{product.price}$</p>
 					<div className="d-flex justify-content-between flex-wrap">
-						<button className="btn btn-primary my-2" onClick={() => setShowDetails({})}>
+						<button
+							className="btn btn-primary my-2"
+							onClick={() => {
+								setShowDetails({});
+							}}
+						>
 							Close
 						</button>
-						<button className="btn btn-secondary my-2">Edit</button>
+						<button
+							className="btn btn-secondary my-2"
+							onClick={() => {
+								setShowDetails({});
+								setEditProduct(product);
+							}}
+						>
+							Edit
+						</button>
 						<button className="btn btn-danger my-2">Delete</button>
 					</div>
 					<p className="card-text fw-lighter" style={{fontSize: "13px"}}>

@@ -1,4 +1,4 @@
-export default function Card({product, setShowDetails, setEditProduct}) {
+export default function Card({product, setShowDetails, setEditProduct, productIndex}) {
 	return (
 		<div className="card my-3 mx-3" style={{width: "250px"}}>
 			<img
@@ -17,13 +17,13 @@ export default function Card({product, setShowDetails, setEditProduct}) {
 				<div className="d-flex justify-content-between flex-wrap">
 					<button
 						className="btn btn-primary my-2"
-						onClick={() => setShowDetails(product)}
+						onClick={() => setShowDetails({...product, index: productIndex})}
 					>
 						Details
 					</button>
 					<button
 						className="btn btn-secondary my-2"
-						onClick={() => setEditProduct(product)}
+						onClick={() => setEditProduct({...product, index: productIndex})}
 					>
 						Edit
 					</button>
