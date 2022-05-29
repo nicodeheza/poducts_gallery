@@ -52,6 +52,9 @@ export default function SearchForm() {
 				</div>
 			</div>
 			<div className="d-flex flex-row-reverse">
+				<button type="button" className="btn btn-secondary mt-3 ms-3">
+					Reset
+				</button>
 				<button type="button" className="btn btn-primary mt-3">
 					Search
 				</button>
