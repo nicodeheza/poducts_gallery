@@ -10,6 +10,12 @@ function App() {
 	const [showDetails, setShowDetails] = useState({});
 	const [editProduct, setEditProduct] = useState({});
 	const [deleteIndex, setDeleteIndex] = useState(null);
+	const [searchParams, setSearchParams] = useState({
+		name: "",
+		category: "Any",
+		minPrice: 1,
+		maxPrice: 99999
+	});
 
 	//get products
 	useEffect(() => {
@@ -54,12 +60,13 @@ function App() {
 
 	return (
 		<div className="container">
-			<Accordion setProducts={setProducts} />
+			<Accordion setProducts={setProducts} setSearchParams={setSearchParams} />
 			<Gallery
 				products={products}
 				setShowDetails={setShowDetails}
 				setEditProduct={setEditProduct}
 				setDeleteIndex={setDeleteIndex}
+				searchParams={searchParams}
 			/>
 			{showDetails.name ? (
 				<Details

@@ -1,7 +1,7 @@
-export default function Options() {
+export default function Options({edit}) {
 	return (
 		<>
-			<option defaultValue>Any</option>
+			{!edit ? <option defaultValue>Any</option> : null}
 			<option value="T-shirt">T-shirt</option>
 			<option value="Shirt">Shirt</option>
 			<option value="Trousers">Trousers</option>

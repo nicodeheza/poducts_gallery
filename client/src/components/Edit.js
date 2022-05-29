@@ -104,7 +104,7 @@ export default function Edit({setEditProduct, editProduct, setProducts}) {
 							value={editProduct.category}
 							onChange={(e) => setEditProduct({...editProduct, category: e.target.value})}
 						>
-							<Options />
+							<Options edit={true} />
 						</select>
 						<label htmlFor="addDescription" className="from-lable">
 							Description:
