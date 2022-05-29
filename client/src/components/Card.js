@@ -1,4 +1,10 @@
-export default function Card({product, setShowDetails, setEditProduct, productIndex}) {
+export default function Card({
+	product,
+	setShowDetails,
+	setEditProduct,
+	productIndex,
+	setDeleteIndex
+}) {
 	return (
 		<div className="card my-3 mx-3" style={{width: "250px"}}>
 			<img
@@ -27,7 +33,12 @@ export default function Card({product, setShowDetails, setEditProduct, productIn
 					>
 						Edit
 					</button>
-					<button className="btn btn-danger my-2">Delete</button>
+					<button
+						className="btn btn-danger my-2"
+						onClick={() => setDeleteIndex(productIndex)}
+					>
+						Delete
+					</button>
 				</div>
 				<p className="card-text fw-lighter" style={{fontSize: "13px"}}>
 					id: {product._id}

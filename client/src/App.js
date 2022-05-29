@@ -9,7 +9,9 @@ function App() {
 	const [products, setProducts] = useState([]);
 	const [showDetails, setShowDetails] = useState({});
 	const [editProduct, setEditProduct] = useState({});
+	const [deleteIndex, setDeleteIndex] = useState(null);
 
+	//get products
 	useEffect(() => {
 		fetch(`${API_URL}/`, {
 			credentials: "include"
@@ -22,6 +24,34 @@ function App() {
 			.catch((err) => console.log(err));
 	}, []);
 
+	//delete product
+	useEffect(() => {
+		if (deleteIndex !== null) {
+			const productId = products[deleteIndex]._id;
+			fetch(`${API_URL}/delete/${productId}`, {
+				method: "DELETE",
+				credentials: "include"
+			})
+				.then((res) => res.json())
+				.then((data) => {
+					if (data.message === "product deleted successfully") {
+						setProducts((prev) => {
+							const newProducts = [...prev];
+							newProducts.splice(deleteIndex, 1);
+							return newProducts;
+						});
+						setDeleteIndex(null);
+					} else {
+						setDeleteIndex(null);
+					}
+				})
+				.catch((err) => {
+					console.log(err);
+					setDeleteIndex(null);
+				});
+		}
+	}, [deleteIndex, products]);
+
 	return (
 		<div className="container">
 			<Accordion setProducts={setProducts} />
@@ -29,12 +59,14 @@ function App() {
 				products={products}
 				setShowDetails={setShowDetails}
 				setEditProduct={setEditProduct}
+				setDeleteIndex={setDeleteIndex}
 			/>
 			{showDetails.name ? (
 				<Details
 					product={showDetails}
 					setShowDetails={setShowDetails}
 					setEditProduct={setEditProduct}
+					setDeleteIndex={setDeleteIndex}
 				/>
 			) : null}
 			{!showDetails.name && editProduct.name !== undefined ? (

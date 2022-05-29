@@ -1,4 +1,9 @@
-export default function Details({product, setShowDetails, setEditProduct}) {
+export default function Details({
+	product,
+	setShowDetails,
+	setEditProduct,
+	setDeleteIndex
+}) {
 	return (
 		<div
 			className="d-flex justify-content-center align-items-center fixed-top"
@@ -40,7 +45,15 @@ export default function Details({product, setShowDetails, setEditProduct}) {
 						>
 							Edit
 						</button>
-						<button className="btn btn-danger my-2">Delete</button>
+						<button
+							className="btn btn-danger my-2"
+							onClick={() => {
+								setDeleteIndex(product.index);
+								setShowDetails({});
+							}}
+						>
+							Delete
+						</button>
 					</div>
 					<p className="card-text fw-lighter" style={{fontSize: "13px"}}>
 						id: {product._id}$

@@ -1,6 +1,11 @@
 import Card from "./Card";
 
-export default function Gallery({products, setShowDetails, setEditProduct}) {
+export default function Gallery({
+	products,
+	setShowDetails,
+	setEditProduct,
+	setDeleteIndex
+}) {
 	return (
 		<div className="mt-5">
 			<h1 className="text-center">Products</h1>
@@ -13,6 +18,7 @@ export default function Gallery({products, setShowDetails, setEditProduct}) {
 									setShowDetails={setShowDetails}
 									setEditProduct={setEditProduct}
 									productIndex={i}
+									setDeleteIndex={setDeleteIndex}
 								/>
 							</div>
 					  ))
