@@ -6,7 +6,7 @@ import Accordion from "./components/Accordion";
 import Edit from "./components/Edit";
 
 function App() {
-	const [products, setProducts] = useState([]);
+	const [products, setProducts] = useState();
 	const [showDetails, setShowDetails] = useState({});
 	const [editProduct, setEditProduct] = useState({});
 	const [deleteIndex, setDeleteIndex] = useState(null);

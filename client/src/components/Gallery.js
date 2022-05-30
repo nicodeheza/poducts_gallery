@@ -31,7 +31,7 @@ export default function Gallery({
 		<div className="mt-5">
 			<h1 className="text-center">Products</h1>
 			<div className="d-flex flex-wrap justify-content-center mt-4 mb-5">
-				{products && products.length > 0 ? (
+				{products ? (
 					products.filter(search).map((product, i) => (
 						<div key={i}>
 							<Card
